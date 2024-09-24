@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:#ecf0f1;
+    color: #2c3e50;
+}
+
+.container {
+    text-align: center;
+    background-color:#ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #3498db;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cell svg {
+    width: 60%;
+    height: 60%;
+}
+
+.cell.x svg {
+    color: #3498db;
+}
+
+.cell.o svg {
+    color: #e74c3c;
+}
+
+.status {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.new-game {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: 600;
+}
+
+.new-game:hover {
+    background-color: #2980b9;
+}
+
+.scorecard {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+.scorecard div {
+    background-color: #ecf0f1;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+@media (max-width: 400px) {
+    .cell {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.cell.pop svg {
+    /* animation: pop 0.3s ease-out; */
+}
